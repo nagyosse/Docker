@@ -1,0 +1,44 @@
+docker run hello-world
+docker run busybox
+docker run busybox ls
+docker ps -a
+
+## töröl
+docker rm 77c6a4f2ddc4
+
+## mindent töröl
+docker rm -f $(docker ps -aq)
+
+docker start 6b886ed4a2bc
+
+## log
+docker logs
+
+## konténer leállítása
+docker stop 6b886ed4a2bc
+docker kill
+
+## futo konténeren parancs futtatása
+docker exec 6b886ed4a2bc echo hello
+## intereaktiv
+docker exec -it 6b886ed4a2bc echo hello
+
+## kilépés a konténer  shell-ből
+ctrl+d
+
+docker run -it hello-world
+
+## Docker file 
+mkdir dockerproject
+mkdir test
+tuch Dockerfile
+docker build .
+docker run 43d60533ac3d
+
+## tag
+docker build -t nagyosse/test:latest .
+
+## webserver
+mkdir webserver
+docker build -t nagyosse/webserver:latest .
+docker run -p 80:888 nagyosse/webserver
