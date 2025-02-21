@@ -42,3 +42,6 @@ docker build -t nagyosse/test:latest .
 mkdir webserver
 docker build -t nagyosse/webserver:latest .
 docker run -p 80:888 nagyosse/webserver
+
+## shell nyitása
+docker exec -it d4d86d4c0810 sh
